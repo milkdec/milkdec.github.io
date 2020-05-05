@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo+Github（一）安装环境</title>
+    <url>/2020/04/25/Hexo-Github%EF%BC%88%E4%B8%80%EF%BC%89%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<img src='http://i2.tiimg.com/718066/3edd6099a2a03945.png'>
+
+<h4 id="更改npm源"><a href="#更改npm源" class="headerlink" title="更改npm源"></a>更改npm源</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">临时更改</span><br><span class="line">npm --registry https:&#x2F;&#x2F;registry.npm.taobao.org install express</span><br><span class="line">永久更改</span><br><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br><span class="line">查看npm源是否更改成功</span><br><span class="line">npm config get registry</span><br><span class="line">回滚到官方源</span><br><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npmjs.org&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>为什么要修改npm源？</p>
+<p>国外的源并不稳定，换为国内的淘宝源下载会顺利一点。</p>
+<h3 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2.安装Hexo"></a>2.安装Hexo</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>此时我们就安装好了Hexo。</p>
+<h3 id="3-创建Hexo工程"><a href="#3-创建Hexo工程" class="headerlink" title="3.创建Hexo工程"></a>3.创建Hexo工程</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">创建一个文件夹blog,blog是你的工程名称，随意填写</span><br><span class="line">使用以下命令初始化blog为hexo工程目录</span><br><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-新建一个post"><a href="#4-新建一个post" class="headerlink" title="4.新建一个post"></a>4.新建一个post</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">进入blog</span><br><span class="line">cd blog</span><br><span class="line">创建 helloworld 文件</span><br><span class="line">hexo new &quot;helloworld&quot;</span><br><span class="line">创建的helloworld文件生成在&#x2F;blog&#x2F;sources&#x2F;_post&#x2F;目录下，名称为helloworld.md</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-生成静态文件"><a href="#5-生成静态文件" class="headerlink" title="5.生成静态文件"></a>5.生成静态文件</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo generate(或简写为 g)</span><br></pre></td></tr></table></figure>
+
+<p>hexo的引擎会将markdown文件解析成可供浏览器查看的HTML文件，HTML文件存放在/blog/public下</p>
+<h3 id="6-运行hexo本地服务"><a href="#6-运行hexo本地服务" class="headerlink" title="6.运行hexo本地服务"></a>6.运行hexo本地服务</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo server(简写为 s)</span><br><span class="line">若提示找不到server命令需要运行以下命令单独下载</span><br><span class="line">npm install hexo-server --save</span><br></pre></td></tr></table></figure>
+
+<img src='http://i2.tiimg.com/718066/624ab6221890ec4b.png'>
+
+<p>运行成功后，在浏览器地址栏输入<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000</a> 可以看到当前的博客。</p>
+<p>此时helloworld文章没有内容，打开/blog/sources/_post/目录，使用编辑器打开helloworld.md添加markdown格式的内容，推荐使用typora编辑器，后续会介绍这款编辑器，<a href="https://www.typora.io/" target="_blank" rel="noopener">官网</a>下载即可，现在重新运行如下命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">或者用更简洁的写法</span><br><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+
+<p>打开浏览器查看修改后的内容。以后创建/查看新的post运行如下命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new &quot;you post name&quot;</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br><span class="line">推荐用更简单的写法，节省时间</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><p>hexo默认安装landscape主题，如想使用别人的主题，需要使用git工具。Windows和Mac用户安装十分简单，Windows登录<a href="https://git-scm.com/" target="_blank" rel="noopener">git官网</a>下载默认安装即可，Mac用户在命令行键入 git 命令即可自动提示安装。</p>
+<h3 id="注册GitHub"><a href="#注册GitHub" class="headerlink" title="注册GitHub"></a>注册GitHub</h3><p>首先注册一个<a href="http://github.com/" target="_blank" rel="noopener">github</a>用户。</p>
+<p>配置用户信息，第一步打开git bash</p>
+<img src='http://i2.tiimg.com/718066/2b70bacca10bc43d.png'>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">配置用户名和邮箱</span><br><span class="line">git config --global “user.name”</span><br><span class="line">git config --global “user.email”（注册git的邮箱）</span><br><span class="line">配置SSH keys</span><br><span class="line">ssh-keygen -t rsa -C &quot;你的邮箱&quot;</span><br><span class="line">type C:\User\Adminstrator\.ssh\id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<img src='http://i2.tiimg.com/718066/902e1626edcc8e42.png'>
+
+<p>复制你看到的内容，在github内配置。步骤为：登陆你的github帐户。点击你的头像，然后 Settings -&gt; 左栏点击 SSH and GPG keys -&gt; 点击 New SSH key</p>
+<img src='http://i2.tiimg.com/718066/0c5ded961515d500.png'>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">在gitbush输入以下命令查看是否成功</span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<img src='http://i2.tiimg.com/718066/fbf311e91327b849.png'>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">下载主题</span><br><span class="line">cd &#x2F;blog&#x2F;themes</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;GallenHu&#x2F;hexo-theme-Daily.git .&#x2F;Daily</span><br><span class="line">cd .&#x2F;Daily</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改配置文件并重启服务"><a href="#修改配置文件并重启服务" class="headerlink" title="修改配置文件并重启服务"></a>修改配置文件并重启服务</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">修改 &#x2F;blog&#x2F;config.yml文件，将theme改为Daily</span><br><span class="line">theme: Daily</span><br><span class="line">重启服务</span><br><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+
+<p>重新打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000</a>查看效果</p>
+<h3 id="更多主题"><a href="#更多主题" class="headerlink" title="更多主题"></a>更多主题</h3><p>hexo|themes主题：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
+<h1 id="github申请免费静态空间"><a href="#github申请免费静态空间" class="headerlink" title="github申请免费静态空间"></a>github申请免费静态空间</h1><p>点击右上角 <strong>+</strong> 选择 new respositories创建新的项目。</p>
+<img src='http://i2.tiimg.com/718066/9a45965d70ac11d1.png'>
+
+<p>设置Repository Name，格式为用户名.github.io，Repository</p>
+<p>Name必须与你的用户名一致，例如下图</p>
+<img src='http://i2.tiimg.com/718066/904b4cf35432d624.png'>
+
+<p>其他选项默认即可，直接点击最后的Create repository。</p>
+<p>此时你的静态空间就创建完成，在浏览器输入 <a href="http://username.github.io/" target="_blank" rel="noopener">http://username.github.io</a> 就可以访问，例如我访问自己的blog</p>
+<img src='http://i2.tiimg.com/718066/5c9600e51aeb6862.png'>
+
+<h1 id="将hexo上传到github"><a href="#将hexo上传到github" class="headerlink" title="将hexo上传到github"></a>将hexo上传到github</h1><p>安装deployer-git</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>在/blog/_config.yml修改deploy属性（注意yml文件的格式，在 : 后有空格）</p>
+<img src='http://i2.tiimg.com/718066/8584a41e8a5c446b.png'>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line"> repo: git@github.com:milkdec&#x2F;milkdec.github.io.git（milkdec换为你自己的用户名）</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<img src='http://i2.tiimg.com/718066/c978e4f36eff81a4.png'>
+
+<p>最后使用命令将Hexo上传到</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<img src='http://i2.tiimg.com/718066/6601af0243f3166e.png'>
+
+
+
+<p>本文同步发送于公众号：tuzierliuSB(是不是非常朋克？)，闲来无事的朋友可以常来看看。</p>
+<img src='http://i2.tiimg.com/718066/184914370720a7bd.jpg'>]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-Github（三）内容操作</title>
+    <url>/2020/05/04/Hexo-Github%EF%BC%88%E4%B8%89%EF%BC%89%E5%86%85%E5%AE%B9%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>Hexo的一些命令和文件夹作用大家应该都已经了解，现在开始实战，正式讲解如何提交自己写的文章，我们需要下载Typora，下载速度会很慢,复制下载链接到迅雷会快很多。<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora官网</a>。<br>这里我们需要引入新的知识，markdown，也就是hexo文章使用的语法。</p>
+<h2 id="什么是markdown？"><a href="#什么是markdown？" class="headerlink" title="什么是markdown？"></a>什么是markdown？</h2><p>这是一种标记类型语言，可以使普通文本拥有一定的格式，其中一些功能十分强大例如插入图片，超链接，代码块，甚至表格。<br>markdown的常用语法<br>参考<a href="https://m.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a></p>
+<h2 id="编写文章内容"><a href="#编写文章内容" class="headerlink" title="编写文章内容"></a>编写文章内容</h2><p>下面我们开始正式编写自己的文章，在你的hexo目录下找到/source/_post/helloworld.md，用Typora打开，编辑内容</p>
+<img src='http://i2.tiimg.com/718066/1fd66da3e20faa36.png'>
+
+<p>首先我们需要根据文章内容加上标签，也可以说是，就是 <strong>tags:</strong> 这一栏，添加的格式为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tags:</span><br><span class="line">- 标签一</span><br><span class="line">- 标签二</span><br></pre></td></tr></table></figure>
+
+<p>之后根据创作的的文章内容新建分类，在tag下新添加一行<strong>categories</strong>，添加分类，格式为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">- 分类</span><br></pre></td></tr></table></figure>
+
+<img src='http://i2.tiimg.com/718066/881c077bd04e3e1d.png'>
+
+<p>在<strong>title</strong>栏添加文章标题，例如helloworld，注：文章标题≠文件名，<strong>hexo new post</strong>新建文章时后跟的是文件名，并不是文章名</p>
+<p>在文章正文添加一些内容，例如test ，no meaning之类的内容，添加上一些格式就可以保存关闭文件</p>
+<img src='http://i2.tiimg.com/718066/6e7e208ff40ad1a1.png'>
+
+<p>打开<strong>git bash</strong>，输入以下命令编译网站内容并打开本地服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+
+<p>现在，打开浏览器，输入<strong>localhost:4000</strong>,你就可以查看刚刚已经编写好的文章</p>
+<img src='http://i2.tiimg.com/718066/ea5be328b674762e.png'>
+
+<img src='http://i2.tiimg.com/718066/d8191cd493c9f7c7.png'>
+
+<p>最后一篇我们将会分享如何在文章内添加图片和链接以及如何搭建图床。</p>
+<p>本文同步发送于公众号：tuzierliuSB(是不是非常朋克？)，闲来无事的朋友可以常来看看。</p>
+<img src='http://i2.tiimg.com/718066/184914370720a7bd.jpg'>]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-Github（二）文件及命令</title>
+    <url>/2020/04/26/Hexo-Github%EF%BC%88%E4%BA%8C%EF%BC%89%E6%96%87%E4%BB%B6%E5%8F%8A%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="一-配置文件讲解"><a href="#一-配置文件讲解" class="headerlink" title="一.配置文件讲解"></a>一.配置文件讲解</h1><p>Hexo搭建好后，我们需要对其进行个性化的配置，使得Hexo能满足自己的需求，如何进行个性化配置？我们需要操作/blog目录下的 _config.yml文件</p>
+<img src='http://i2.tiimg.com/718066/fbbfcca0c135c3a2.png'>
+
+<h2 id="1-site"><a href="#1-site" class="headerlink" title="1.site"></a>1.site</h2><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>网站标题</td>
+</tr>
+<tr>
+<td>subtitle</td>
+<td>网站副标题</td>
+</tr>
+<tr>
+<td>description</td>
+<td>网站描述</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>网站关键字</td>
+</tr>
+<tr>
+<td>author</td>
+<td>网站作者</td>
+</tr>
+<tr>
+<td>language</td>
+<td>网站使用的语言，默认‘en’，中文站根据主题/themes/你的主题/language来设置，如zh-CN.yml</td>
+</tr>
+<tr>
+<td>timezone</td>
+<td>网站使用的时区，默认为计算机预设置，可不填</td>
+</tr>
+</tbody></table>
+<p><strong>注：</strong>关于中文乱码出现的原因是：_config.yml文件默认编码为ANSI。</p>
+<p>解决办法是：文件另存为，在底部修改编码为UTF-8</p>
+<img src='http://i2.tiimg.com/718066/7ff2d85bbf522b0c.png'>
+
+<h2 id="2-URL"><a href="#2-URL" class="headerlink" title="2.URL"></a>2.URL</h2><p>博客的地址，一般不用更改。</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>url</td>
+<td>网站网址</td>
+</tr>
+<tr>
+<td>root</td>
+<td>网站的根目录，存放文章的目录</td>
+</tr>
+<tr>
+<td>permalink</td>
+<td>文章的链接格式，默认格式为 :year/:month/:day/:title/</td>
+</tr>
+<tr>
+<td>permalink</td>
+<td>永久链接中每个段的默认值</td>
+</tr>
+</tbody></table>
+<h2 id="3-Directory"><a href="#3-Directory" class="headerlink" title="3.Directory"></a>3.Directory</h2><p>文件夹设置，一般不用更改</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>source_dir</td>
+<td>资源文件夹，存放用户的资源文件，默认为source</td>
+</tr>
+<tr>
+<td>public_dir</td>
+<td>公用文件夹，存放生成的静态文件，默认为public</td>
+</tr>
+<tr>
+<td>tag_dir</td>
+<td>标签目录，默认为tags</td>
+</tr>
+<tr>
+<td>archive_dir</td>
+<td>档案目录，默认为archives</td>
+</tr>
+<tr>
+<td>category_dir</td>
+<td>分类目录，默认为categories</td>
+</tr>
+<tr>
+<td>code_dir</td>
+<td>代码目录，默认为downloads/code</td>
+</tr>
+<tr>
+<td>i18n_dir</td>
+<td>i18n，默认为 :lang</td>
+</tr>
+<tr>
+<td>skip_render</td>
+<td>储存站长验证文件，跳过指定文件的渲染</td>
+</tr>
+</tbody></table>
+<h2 id="4-Writing"><a href="#4-Writing" class="headerlink" title="4.Writing"></a>4.Writing</h2><p>写作设置，可以根据自己的写作习惯进行调整</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>new_post_name</td>
+<td>文章的文件名格式，默认为:title.md</td>
+</tr>
+<tr>
+<td>default_layout</td>
+<td>预设的布局模板，默认为post</td>
+</tr>
+<tr>
+<td>titlecase</td>
+<td>标题是否使用首字母大写，默认为false</td>
+</tr>
+<tr>
+<td>external_link</td>
+<td>链接是否在新标签页打开，默认为true</td>
+</tr>
+<tr>
+<td>filename_case</td>
+<td>将文件名转换为 1 小写或 2 大写，默认为0</td>
+</tr>
+<tr>
+<td>render_drafts</td>
+<td>是否显示渲染草稿，默认为false</td>
+</tr>
+<tr>
+<td>post_asset_folder</td>
+<td>是否使用Asset文件夹，默认为false</td>
+</tr>
+<tr>
+<td>highlight</td>
+<td>代码块设置</td>
+</tr>
+</tbody></table>
+<h3 id="highlight"><a href="#highlight" class="headerlink" title="highlight"></a>highlight</h3><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>enable</td>
+<td>是否使用代码高亮，默认为true</td>
+</tr>
+<tr>
+<td>line_number</td>
+<td>是否显示行号，默认true</td>
+</tr>
+<tr>
+<td>auto_detect</td>
+<td>是否自动检测语言，默认为false</td>
+</tr>
+<tr>
+<td>tab_replace</td>
+<td>tab替代设置</td>
+</tr>
+</tbody></table>
+<h2 id="5-Home-page-setting"><a href="#5-Home-page-setting" class="headerlink" title="5.Home page setting"></a>5.Home page setting</h2><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index_generator</td>
+<td>主页设置</td>
+</tr>
+</tbody></table>
+<h3 id="index-generator"><a href="#index-generator" class="headerlink" title="index_generator"></a>index_generator</h3><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>path</td>
+<td>首页的根目录</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>每页显示文章的数量，默认为10</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>显示文章的顺序，默认为 -date</td>
+</tr>
+</tbody></table>
+<h2 id="6-Category-amp-Tag"><a href="#6-Category-amp-Tag" class="headerlink" title="6.Category &amp; Tag"></a>6.Category &amp; Tag</h2><p>分类与标签配置</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>default_category</td>
+<td>预设分类默认uncategorized</td>
+</tr>
+<tr>
+<td>category_map</td>
+<td>分类别名</td>
+</tr>
+<tr>
+<td>tag_map</td>
+<td>标签别名</td>
+</tr>
+</tbody></table>
+<h2 id="7-Date-Time-format"><a href="#7-Date-Time-format" class="headerlink" title="7.Date/Time format"></a>7.Date/Time format</h2><p>时间和日期的显示格式，一般没特殊要求的也不需要修改</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>date_format</td>
+<td>日期格式，默认为 YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>time_format</td>
+<td>时间格式，默认为 HH:mm:ss</td>
+</tr>
+</tbody></table>
+<h2 id="8-Pagination"><a href="#8-Pagination" class="headerlink" title="8.Pagination"></a>8.Pagination</h2><p>分页设置，可自己决定单个页面上显示文章数量和分页目录</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>per_page</td>
+<td>单个页面上显示的文章数量，默认为10，用0表示禁用分页</td>
+</tr>
+<tr>
+<td>pagination_dir</td>
+<td>分页目录，默认为page</td>
+</tr>
+</tbody></table>
+<h2 id="9-Extensions"><a href="#9-Extensions" class="headerlink" title="9.Extensions"></a>9.Extensions</h2><p>这里设置主题类型和插件，更换博客主题时需要进行一些修改</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>theme</td>
+<td>博客主题，默认为landscape</td>
+</tr>
+</tbody></table>
+<h2 id="10-Deployment"><a href="#10-Deployment" class="headerlink" title="10.Deployment"></a>10.Deployment</h2><p>网站部署配置，常用的有部署类型与部署地址</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>deploy</td>
+<td>网站部署配置</td>
+</tr>
+</tbody></table>
+<h3 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h3><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>type</td>
+<td>网站部署类型</td>
+</tr>
+<tr>
+<td>repo</td>
+<td>网站部署地址</td>
+</tr>
+</tbody></table>
+<h1 id="二-常用命令讲解"><a href="#二-常用命令讲解" class="headerlink" title="二.常用命令讲解"></a>二.常用命令讲解</h1><p>Hexo框架可以帮助我们快速创建一个属于自己的博客网站，而他提供的命令会更有利于我们管理博客。</p>
+<h2 id="1-hexo-init"><a href="#1-hexo-init" class="headerlink" title="1.hexo init"></a>1.hexo init</h2><p>作用为初始化本地文件夹为网站根目录</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init [folder]</span><br></pre></td></tr></table></figure>
+
+<p>未指定folder，默认使用当前目录</p>
+<h2 id="2-hexo-new"><a href="#2-hexo-new" class="headerlink" title="2.hexo new"></a>2.hexo new</h2><p>作用为新建文章</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt; 或简写 hexo n</span><br></pre></td></tr></table></figure>
+
+<p>layout为可选参数，指定文章类型，若无指定则默认由配置文件中的default_layout决定</p>
+<p>title为必填参数，用于指定文章标题，如果参数值含空格，使用双引号包围</p>
+<h2 id="3-hexo-generate"><a href="#3-hexo-generate" class="headerlink" title="3.hexo generate"></a>3.hexo generate</h2><p>用于生成静态文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo generate 或 hexo g</span><br></pre></td></tr></table></figure>
+
+<p>-d为可选选项，指定生成后部署，与 hexo d -g 等价</p>
+<h2 id="4-hexo-server"><a href="#4-hexo-server" class="headerlink" title="4.hexo server"></a>4.hexo server</h2><p>启动本地服务器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo server 或 hexo s</span><br></pre></td></tr></table></figure>
+
+<p>-p 指定服务器端口，默认4000</p>
+<p>-i 指定服务器IP地址，默认0.0.0.0</p>
+<p>-s 静态模式，仅提供public文件夹中的文件并禁用文件监视</p>
+<p>注：运行服务器前需要安装hexo-server插件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-server --save</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-hexo-deploy"><a href="#5-hexo-deploy" class="headerlink" title="5.hexo deploy"></a>5.hexo deploy</h2><p>用于部署网站</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#先安装部署插件</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>-g ，指定生成后部署，等价于hexo g -d</p>
+<p>部署前需要修改 _config.yml配置文件，如git</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repo: &lt;repository url&gt;</span><br><span class="line">	branch:master</span><br><span class="line">	message:自定义提交消息，默认为sit update: &#123;&#123;now:(&#39;YYYY-MM-DD HH:mm:ss&#39;)&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-hexo-clean"><a href="#6-hexo-clean" class="headerlink" title="6.hexo clean"></a>6.hexo clean</h2><p>清理缓存文件，常用，网站异常时尝试此操作</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-option"><a href="#7-option" class="headerlink" title="7.option"></a>7.option</h2><h3 id="1-hexo-—safe"><a href="#1-hexo-—safe" class="headerlink" title="1.hexo —safe"></a>1.hexo —safe</h3><p>安全模式，禁用加载插件和脚本</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo --safe</span><br></pre></td></tr></table></figure>
+
+<p>安装新插件时遇到问题可尝试此操作排错</p>
+<h3 id="2-hexo-—debug"><a href="#2-hexo-—debug" class="headerlink" title="2.hexo —debug"></a>2.hexo —debug</h3><p>调试模式，用于将消息详细记录到终端和 debug.log文件中</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo --debug</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-hexo-—silent"><a href="#3-hexo-—silent" class="headerlink" title="3.hexo —silent"></a>3.hexo —silent</h3><p>静默模式，静默输出到终端</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo --silent</span><br></pre></td></tr></table></figure>
+
+<p>本文同步发送于公众号：tuzierliuSB(是不是非常朋克？)，闲来无事的朋友可以常来看看。</p>
+<img src='http://i2.tiimg.com/718066/184914370720a7bd.jpg'>]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-Github（四）文章内插入图片</title>
+    <url>/2020/05/04/Hexo-Github%EF%BC%88%E5%9B%9B%EF%BC%89%E6%96%87%E7%AB%A0%E5%86%85%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<p>在文章内容的写作上，我们常常会使用到图片，本系列最后一篇，如何在文章内添加图片？</p>
+<p>现在我们有两个方法向文章添加图片，通过图片插件的方式添加或者通过搭建图床获取直链的方式。两种方法各有好处，我会一一介绍。</p>
+<h2 id="图片插件"><a href="#图片插件" class="headerlink" title="图片插件"></a>图片插件</h2><p>首先，我们需要下载插件，打开CMD输入以下命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<img src='http://i2.tiimg.com/718066/8a1f902116483972.png'>
+
+<p>第二步，修改_config.yml配置文件</p>
+<p>修改post_asset_folder:true</p>
+<img src='http://i2.tiimg.com/718066/904630840fe09038.png'>
+
+<p>第三步，git bash进入博客工程文件夹，新建一篇文章</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new post testfile</span><br></pre></td></tr></table></figure>
+
+<p>进入/blog/source/_posts文件夹内，新创建的文章会有一个同名的文件夹，文章内需要添加的图片就放置在其中。</p>
+<p>第四步，在文章内引用图片的方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![](同名文件夹&#x2F;图片名称)</span><br></pre></td></tr></table></figure>
+
+<p>使用相对路径，这样才能读取到</p>
+<img src='http://i2.tiimg.com/718066/f67217ce363e7425.png'>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+
+<p>打开浏览器访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000</a></p>
+<img src='http://i2.tiimg.com/718066/fd6b924d363aa0d7.png'>
+
+<p>图片添加成功</p>
+<h2 id="GitHub-PicGo"><a href="#GitHub-PicGo" class="headerlink" title="GitHub+PicGo"></a>GitHub+PicGo</h2><p>首先我们需要知道一个概念，图床工具是什么？</p>
+<p>简单来说就是把本地图片转换为链接的一种工具。我们将要使用的PicGo就是其中的一款，它支持微博/七牛云/阿里OSS/腾讯COS/又拍云/GitHub/SM.MS/imgur等八种常用图床，功能强大，简单易用。</p>
+<p>那么搭建的图床有什么作用呢?</p>
+<p>我们在写博客时需要插入图片，五花八门，内容非常多，本地存储起来十分麻烦。此时，我们可以在GitHub上利用PicGo搭建图床，将想要放入文章的图片上传到图床转换为可访问的链接，将放入文章内即可直接访问。</p>
+<p>首先，我们需要到GitHub下载<a href="https://github.com/Molunerfinn/PicGo/releases" target="_blank" rel="noopener">PicGo</a>并安装。</p>
+<p>在GitHub新建一个库用于存储上传的图片</p>
+<img src='http://i2.tiimg.com/718066/c8e79e3182d7d631.png'>
+
+<p>在 个人中心 - setting - developer setting - personal access tokens中选择generate new token新建一个token，填写note注释，选择repo复选框，拉到底部确定新建。</p>
+<img src='http://i2.tiimg.com/718066/2a1bf05e753b454a.png'>
+
+<p>复制保存一串token字符，这只会出现一次，请好好保存。</p>
+<p>打开PicGo，在图床设置选择Github,仓库名为 用户/仓库名，分支名为master，token为你复制的那一串字符，存储路径可填可不填，自定义域名为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;用户名&#x2F;仓库名&#x2F;master</span><br></pre></td></tr></table></figure>
+
+<p>点击完成即可绑定，然后设置成默认图床。</p>
+<img src='http://i2.tiimg.com/718066/8472d41c1cffd414.png'>
+
+<p>接下来我们在上传区将需要的图片拉进去，或者将剪贴板的图片直接上传，上传成功后会有提醒</p>
+<img src='http://i2.tiimg.com/718066/bb67df76e7a3fa3d.png'>
+
+<p>上传完成后在相册可以直接看到自己上传的图片</p>
+<img src='http://i2.tiimg.com/718066/a4e08447c038e567.png'>
+
+<p>在需要使用的时候直接将图片拉取到文章内容中就行了。</p>
+<img src='http://i2.tiimg.com/718066/f3e225de1d40589b.png'>
+
+<p>在网页中也可以正常访问。</p>
+<img src='http://i2.tiimg.com/718066/c3acd718072866b4.png'>
+
+<p>最后，图床有一个缺点是太慢，容易加载不出来，个人更倾向于使用第一个方法。博客搭建系列文章已经结束，快来写一篇属于自己的奇思妙想吧。</p>
+<p>本文同步发送于公众号：tuzierliuSB(是不是非常朋克？)，闲来无事的朋友可以常来看看。</p>
+<img src='http://i2.tiimg.com/718066/184914370720a7bd.jpg'>]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+</search>
