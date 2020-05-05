@@ -452,46 +452,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo-Github（三）内容操作</title>
-    <url>/2020/05/04/Hexo-Github%EF%BC%88%E4%B8%89%EF%BC%89%E5%86%85%E5%AE%B9%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p>Hexo的一些命令和文件夹作用大家应该都已经了解，现在开始实战，正式讲解如何提交自己写的文章，我们需要下载Typora，下载速度会很慢,复制下载链接到迅雷会快很多。<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora官网</a>。<br>这里我们需要引入新的知识，markdown，也就是hexo文章使用的语法。</p>
-<h2 id="什么是markdown？"><a href="#什么是markdown？" class="headerlink" title="什么是markdown？"></a>什么是markdown？</h2><p>这是一种标记类型语言，可以使普通文本拥有一定的格式，其中一些功能十分强大例如插入图片，超链接，代码块，甚至表格。<br>markdown的常用语法<br>参考<a href="https://m.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a></p>
-<h2 id="编写文章内容"><a href="#编写文章内容" class="headerlink" title="编写文章内容"></a>编写文章内容</h2><p>下面我们开始正式编写自己的文章，在你的hexo目录下找到/source/_post/helloworld.md，用Typora打开，编辑内容</p>
-<img src='http://i2.tiimg.com/718066/1fd66da3e20faa36.png'>
-
-<p>首先我们需要根据文章内容加上标签，也可以说是，就是 <strong>tags:</strong> 这一栏，添加的格式为</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tags:</span><br><span class="line">- 标签一</span><br><span class="line">- 标签二</span><br></pre></td></tr></table></figure>
-
-<p>之后根据创作的的文章内容新建分类，在tag下新添加一行<strong>categories</strong>，添加分类，格式为</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">- 分类</span><br></pre></td></tr></table></figure>
-
-<img src='http://i2.tiimg.com/718066/881c077bd04e3e1d.png'>
-
-<p>在<strong>title</strong>栏添加文章标题，例如helloworld，注：文章标题≠文件名，<strong>hexo new post</strong>新建文章时后跟的是文件名，并不是文章名</p>
-<p>在文章正文添加一些内容，例如test ，no meaning之类的内容，添加上一些格式就可以保存关闭文件</p>
-<img src='http://i2.tiimg.com/718066/6e7e208ff40ad1a1.png'>
-
-<p>打开<strong>git bash</strong>，输入以下命令编译网站内容并打开本地服务</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
-
-<p>现在，打开浏览器，输入<strong>localhost:4000</strong>,你就可以查看刚刚已经编写好的文章</p>
-<img src='http://i2.tiimg.com/718066/ea5be328b674762e.png'>
-
-<img src='http://i2.tiimg.com/718066/d8191cd493c9f7c7.png'>
-
-<p>最后一篇我们将会分享如何在文章内添加图片和链接以及如何搭建图床。</p>
-<p>本文同步发送于公众号：tuzierliuSB(是不是非常朋克？)，闲来无事的朋友可以常来看看。</p>
-<img src='http://i2.tiimg.com/718066/184914370720a7bd.jpg'>]]></content>
-      <categories>
-        <category>博客</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>博客</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo-Github（四）文章内插入图片</title>
     <url>/2020/05/04/Hexo-Github%EF%BC%88%E5%9B%9B%EF%BC%89%E6%96%87%E7%AB%A0%E5%86%85%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</url>
     <content><![CDATA[<p>在文章内容的写作上，我们常常会使用到图片，本系列最后一篇，如何在文章内添加图片？</p>
@@ -552,6 +512,46 @@
 <img src='http://i2.tiimg.com/718066/c3acd718072866b4.png'>
 
 <p>最后，图床有一个缺点是太慢，容易加载不出来，个人更倾向于使用第一个方法。博客搭建系列文章已经结束，快来写一篇属于自己的奇思妙想吧。</p>
+<p>本文同步发送于公众号：tuzierliuSB(是不是非常朋克？)，闲来无事的朋友可以常来看看。</p>
+<img src='http://i2.tiimg.com/718066/184914370720a7bd.jpg'>]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-Github（三）内容操作</title>
+    <url>/2020/05/04/Hexo-Github%EF%BC%88%E4%B8%89%EF%BC%89%E5%86%85%E5%AE%B9%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>Hexo的一些命令和文件夹作用大家应该都已经了解，现在开始实战，正式讲解如何提交自己写的文章，我们需要下载Typora，下载速度会很慢,复制下载链接到迅雷会快很多。<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora官网</a>。<br>这里我们需要引入新的知识，markdown，也就是hexo文章使用的语法。</p>
+<h2 id="什么是markdown？"><a href="#什么是markdown？" class="headerlink" title="什么是markdown？"></a>什么是markdown？</h2><p>这是一种标记类型语言，可以使普通文本拥有一定的格式，其中一些功能十分强大例如插入图片，超链接，代码块，甚至表格。<br>markdown的常用语法<br>参考<a href="https://m.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a></p>
+<h2 id="编写文章内容"><a href="#编写文章内容" class="headerlink" title="编写文章内容"></a>编写文章内容</h2><p>下面我们开始正式编写自己的文章，在你的hexo目录下找到/source/_post/helloworld.md，用Typora打开，编辑内容</p>
+<img src='http://i2.tiimg.com/718066/1fd66da3e20faa36.png'>
+
+<p>首先我们需要根据文章内容加上标签，也可以说是，就是 <strong>tags:</strong> 这一栏，添加的格式为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tags:</span><br><span class="line">- 标签一</span><br><span class="line">- 标签二</span><br></pre></td></tr></table></figure>
+
+<p>之后根据创作的的文章内容新建分类，在tag下新添加一行<strong>categories</strong>，添加分类，格式为</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">- 分类</span><br></pre></td></tr></table></figure>
+
+<img src='http://i2.tiimg.com/718066/881c077bd04e3e1d.png'>
+
+<p>在<strong>title</strong>栏添加文章标题，例如helloworld，注：文章标题≠文件名，<strong>hexo new post</strong>新建文章时后跟的是文件名，并不是文章名</p>
+<p>在文章正文添加一些内容，例如test ，no meaning之类的内容，添加上一些格式就可以保存关闭文件</p>
+<img src='http://i2.tiimg.com/718066/6e7e208ff40ad1a1.png'>
+
+<p>打开<strong>git bash</strong>，输入以下命令编译网站内容并打开本地服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+
+<p>现在，打开浏览器，输入<strong>localhost:4000</strong>,你就可以查看刚刚已经编写好的文章</p>
+<img src='http://i2.tiimg.com/718066/ea5be328b674762e.png'>
+
+<img src='http://i2.tiimg.com/718066/d8191cd493c9f7c7.png'>
+
+<p>最后一篇我们将会分享如何在文章内添加图片和链接以及如何搭建图床。</p>
 <p>本文同步发送于公众号：tuzierliuSB(是不是非常朋克？)，闲来无事的朋友可以常来看看。</p>
 <img src='http://i2.tiimg.com/718066/184914370720a7bd.jpg'>]]></content>
       <categories>
