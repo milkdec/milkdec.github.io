@@ -5,12 +5,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Hexo-Github（三）内容操作 - 兔子耳六的博客</title>
+    <title>Hexo-Github（五）将博客同步部署到多个平台 - 兔子耳六的博客</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="Hexo的一些命令和文件夹作用大家应该都已经了解，现在开始实战，正式讲解如何提交自己写的文章，我们需要下载Typora，下载速度会很慢,复制下载链接到迅雷会快很多。Typora官网。这里我们需要引入,"> 
+    <meta name="description" content="
+"> 
     
     <link rel="alternative" href="atom.xml" title="兔子耳六的博客" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -38,7 +39,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://milkdec.github.io"></a>
     <div title="播放/暂停" class="iconfont icon-play"></div>
-    <h3 class="subtitle">Hexo-Github（三）内容操作</h3>
+    <h3 class="subtitle">Hexo-Github（五）将博客同步部署到多个平台</h3>
     <div class="social">
         <div>
             <div class="share">
@@ -53,42 +54,20 @@
     <div class="section">
         <div class="article">
     <div class='main'>
-        <h1 class="title">Hexo-Github（三）内容操作</h1>
+        <h1 class="title">Hexo-Github（五）将博客同步部署到多个平台</h1>
         <div class="stuff">
-            <span>五月 04, 2020</span>
+            <span>五月 09, 2020</span>
             
   <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag">教程</a></li></ul>
 
 
         </div>
         <div class="content markdown">
-            <p>Hexo的一些命令和文件夹作用大家应该都已经了解，现在开始实战，正式讲解如何提交自己写的文章，我们需要下载Typora，下载速度会很慢,复制下载链接到迅雷会快很多。<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora官网</a>。<br>这里我们需要引入新的知识，markdown，也就是hexo文章使用的语法。</p>
-<h2 id="什么是markdown？"><a href="#什么是markdown？" class="headerlink" title="什么是markdown？"></a>什么是markdown？</h2><p>这是一种标记类型语言，可以使普通文本拥有一定的格式，其中一些功能十分强大例如插入图片，超链接，代码块，甚至表格。<br>markdown的常用语法<br>参考<a href="https://m.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a></p>
-<h2 id="编写文章内容"><a href="#编写文章内容" class="headerlink" title="编写文章内容"></a>编写文章内容</h2><p>下面我们开始正式编写自己的文章，在你的hexo目录下找到/source/_post/helloworld.md，用Typora打开，编辑内容</p>
-<p><img src="http://s1.wailian.download/2020/05/05/16.png" alt="16.png"></p>
-<p>首先我们需要根据文章内容加上标签，也可以说是，就是 <strong>tags:</strong> 这一栏，添加的格式为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tags:</span><br><span class="line">- 标签一</span><br><span class="line">- 标签二</span><br></pre></td></tr></table></figure>
-
-<p>之后根据创作的的文章内容新建分类，在tag下新添加一行<strong>categories</strong>，添加分类，格式为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">- 分类</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://s1.wailian.download/2020/05/05/17.png" alt="17.png"></p>
-<p>在<strong>title</strong>栏添加文章标题，例如helloworld，注：文章标题≠文件名，<strong>hexo new post</strong>新建文章时后跟的是文件名，并不是文章名</p>
-<p>在文章正文添加一些内容，例如test ，no meaning之类的内容，添加上一些格式就可以保存关闭文件</p>
-<p><img src="http://s1.wailian.download/2020/05/05/18.png" alt="18.png"></p>
-<p>打开<strong>git bash</strong>，输入以下命令编译网站内容并打开本地服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
-
-<p>现在，打开浏览器，输入<strong>localhost:4000</strong>,你就可以查看刚刚已经编写好的文章</p>
-<p><img src="http://s1.wailian.download/2020/05/05/19.png" alt="19.png"></p>
-<p><img src="http://s1.wailian.download/2020/05/05/20.png" alt="20.png"></p>
-<p>最后一篇我们将会分享如何在文章内添加图片和链接以及如何搭建图床。</p>
-<p>本文同步发送于公众号：tuzierliuSB(是不是非常朋克？)，闲来无事的朋友可以常来看看。</p>
-<p><img src="http://s1.wailian.download/2020/05/05/logo.jpg" alt="logo.jpg"></p>
+            <p><img src="http://s1.wailian.download/2020/05/05/logo.jpg" alt="logo.jpg"></p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
-                <source type="audio/mpeg" src="https://link.hhtjim.com/qq/0025kFuW28ynof.mp3">
+                <source type="audio/mpeg" src="https://link.hhtjim.com/qq/00452FxB0WKiOy.mp3">
             </audio>
             
         </div>
@@ -108,7 +87,7 @@
     </div>
     
         <div class='side'>
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是markdown？"><span class="toc-number">1.</span> <span class="toc-text">什么是markdown？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写文章内容"><span class="toc-number">2.</span> <span class="toc-text">编写文章内容</span></a></li></ol>	
+				
         </div>
     
 </div>

@@ -11,8 +11,7 @@
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
     <meta name="description" content="
-
-更改npm源12345678临时更改npm --registry https:&amp;#x2F;&amp;#x2F;registry.npm.taobao.org install express永久更改npm,"> 
+更改npm源12345678临时更改npm --registry https:&amp;#x2F;&amp;#x2F;registry.npm.taobao.org install express永久更改npm ,"> 
     
     <link rel="alternative" href="atom.xml" title="兔子耳六的博客" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -64,8 +63,7 @@
 
         </div>
         <div class="content markdown">
-            <img src='http://i2.tiimg.com/718066/3edd6099a2a03945.png'>
-
+            <p><img src="http://s1.wailian.download/2020/05/05/1.png" alt="1.png"></p>
 <h4 id="更改npm源"><a href="#更改npm源" class="headerlink" title="更改npm源"></a>更改npm源</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">临时更改</span><br><span class="line">npm --registry https:&#x2F;&#x2F;registry.npm.taobao.org install express</span><br><span class="line">永久更改</span><br><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br><span class="line">查看npm源是否更改成功</span><br><span class="line">npm config get registry</span><br><span class="line">回滚到官方源</span><br><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npmjs.org&#x2F;</span><br></pre></td></tr></table></figure>
 
 <p>为什么要修改npm源？</p>
@@ -82,8 +80,7 @@
 <p>hexo的引擎会将markdown文件解析成可供浏览器查看的HTML文件，HTML文件存放在/blog/public下</p>
 <h3 id="6-运行hexo本地服务"><a href="#6-运行hexo本地服务" class="headerlink" title="6.运行hexo本地服务"></a>6.运行hexo本地服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo server(简写为 s)</span><br><span class="line">若提示找不到server命令需要运行以下命令单独下载</span><br><span class="line">npm install hexo-server --save</span><br></pre></td></tr></table></figure>
 
-<img src='http://i2.tiimg.com/718066/624ab6221890ec4b.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/2.png" alt="2.png"></p>
 <p>运行成功后，在浏览器地址栏输入<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000</a> 可以看到当前的博客。</p>
 <p>此时helloworld文章没有内容，打开/blog/sources/_post/目录，使用编辑器打开helloworld.md添加markdown格式的内容，推荐使用typora编辑器，后续会介绍这款编辑器，<a href="https://www.typora.io/" target="_blank" rel="noopener">官网</a>下载即可，现在重新运行如下命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">或者用更简洁的写法</span><br><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
@@ -94,19 +91,15 @@
 <h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><p>hexo默认安装landscape主题，如想使用别人的主题，需要使用git工具。Windows和Mac用户安装十分简单，Windows登录<a href="https://git-scm.com/" target="_blank" rel="noopener">git官网</a>下载默认安装即可，Mac用户在命令行键入 git 命令即可自动提示安装。</p>
 <h3 id="注册GitHub"><a href="#注册GitHub" class="headerlink" title="注册GitHub"></a>注册GitHub</h3><p>首先注册一个<a href="http://github.com/" target="_blank" rel="noopener">github</a>用户。</p>
 <p>配置用户信息，第一步打开git bash</p>
-<img src='http://i2.tiimg.com/718066/2b70bacca10bc43d.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/3.png" alt="3.png"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">配置用户名和邮箱</span><br><span class="line">git config --global “user.name”</span><br><span class="line">git config --global “user.email”（注册git的邮箱）</span><br><span class="line">配置SSH keys</span><br><span class="line">ssh-keygen -t rsa -C &quot;你的邮箱&quot;</span><br><span class="line">type C:\User\Adminstrator\.ssh\id_rsa.pub</span><br></pre></td></tr></table></figure>
 
-<img src='http://i2.tiimg.com/718066/902e1626edcc8e42.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/4.png" alt="4.png"></p>
 <p>复制你看到的内容，在github内配置。步骤为：登陆你的github帐户。点击你的头像，然后 Settings -&gt; 左栏点击 SSH and GPG keys -&gt; 点击 New SSH key</p>
-<img src='http://i2.tiimg.com/718066/0c5ded961515d500.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/5.png" alt="5.png"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在gitbush输入以下命令查看是否成功</span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
-<img src='http://i2.tiimg.com/718066/fbf311e91327b849.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/6.png" alt="6.png"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">下载主题</span><br><span class="line">cd &#x2F;blog&#x2F;themes</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;GallenHu&#x2F;hexo-theme-Daily.git .&#x2F;Daily</span><br><span class="line">cd .&#x2F;Daily</span><br></pre></td></tr></table></figure>
 
 <h3 id="修改配置文件并重启服务"><a href="#修改配置文件并重启服务" class="headerlink" title="修改配置文件并重启服务"></a>修改配置文件并重启服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">修改 &#x2F;blog&#x2F;config.yml文件，将theme改为Daily</span><br><span class="line">theme: Daily</span><br><span class="line">重启服务</span><br><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
@@ -114,35 +107,28 @@
 <p>重新打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000</a>查看效果</p>
 <h3 id="更多主题"><a href="#更多主题" class="headerlink" title="更多主题"></a>更多主题</h3><p>hexo|themes主题：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
 <h1 id="github申请免费静态空间"><a href="#github申请免费静态空间" class="headerlink" title="github申请免费静态空间"></a>github申请免费静态空间</h1><p>点击右上角 <strong>+</strong> 选择 new respositories创建新的项目。</p>
-<img src='http://i2.tiimg.com/718066/9a45965d70ac11d1.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/8.png" alt="8.png"></p>
 <p>设置Repository Name，格式为用户名.github.io，Repository</p>
 <p>Name必须与你的用户名一致，例如下图</p>
-<img src='http://i2.tiimg.com/718066/904b4cf35432d624.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/9.png" alt="9.png"></p>
 <p>其他选项默认即可，直接点击最后的Create repository。</p>
 <p>此时你的静态空间就创建完成，在浏览器输入 <a href="http://username.github.io/" target="_blank" rel="noopener">http://username.github.io</a> 就可以访问，例如我访问自己的blog</p>
-<img src='http://i2.tiimg.com/718066/5c9600e51aeb6862.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/10.png" alt="10.png"></p>
 <h1 id="将hexo上传到github"><a href="#将hexo上传到github" class="headerlink" title="将hexo上传到github"></a>将hexo上传到github</h1><p>安装deployer-git</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
 <p>在/blog/_config.yml修改deploy属性（注意yml文件的格式，在 : 后有空格）</p>
-<img src='http://i2.tiimg.com/718066/8584a41e8a5c446b.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/11.png" alt="11.png"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line"> repo: git@github.com:milkdec&#x2F;milkdec.github.io.git（milkdec换为你自己的用户名）</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
-<img src='http://i2.tiimg.com/718066/c978e4f36eff81a4.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/12.png" alt="12.png"></p>
 <p>最后使用命令将Hexo上传到</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
 
-<img src='http://i2.tiimg.com/718066/6601af0243f3166e.png'>
-
-
-
+<p><img src="http://s1.wailian.download/2020/05/05/13.png" alt="13.png"></p>
 <p>本文同步发送于公众号：tuzierliuSB(是不是非常朋克？)，闲来无事的朋友可以常来看看。</p>
-<img src='http://i2.tiimg.com/718066/184914370720a7bd.jpg'>
+<p><img src="http://s1.wailian.download/2020/05/05/logo.jpg" alt="logo.jpg"></p>
+
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
                 <source type="audio/mpeg" src="https://link.hhtjim.com/qq/00452FxB0WKiOy.mp3">

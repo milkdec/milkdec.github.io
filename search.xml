@@ -3,8 +3,7 @@
   <entry>
     <title>Hexo-Github（一）安装环境</title>
     <url>/2020/04/25/Hexo-Github%EF%BC%88%E4%B8%80%EF%BC%89%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<img src='http://i2.tiimg.com/718066/3edd6099a2a03945.png'>
-
+    <content><![CDATA[<p><img src="http://s1.wailian.download/2020/05/05/1.png" alt="1.png"></p>
 <h4 id="更改npm源"><a href="#更改npm源" class="headerlink" title="更改npm源"></a>更改npm源</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">临时更改</span><br><span class="line">npm --registry https:&#x2F;&#x2F;registry.npm.taobao.org install express</span><br><span class="line">永久更改</span><br><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br><span class="line">查看npm源是否更改成功</span><br><span class="line">npm config get registry</span><br><span class="line">回滚到官方源</span><br><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npmjs.org&#x2F;</span><br></pre></td></tr></table></figure>
 
 <p>为什么要修改npm源？</p>
@@ -21,8 +20,7 @@
 <p>hexo的引擎会将markdown文件解析成可供浏览器查看的HTML文件，HTML文件存放在/blog/public下</p>
 <h3 id="6-运行hexo本地服务"><a href="#6-运行hexo本地服务" class="headerlink" title="6.运行hexo本地服务"></a>6.运行hexo本地服务</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo server(简写为 s)</span><br><span class="line">若提示找不到server命令需要运行以下命令单独下载</span><br><span class="line">npm install hexo-server --save</span><br></pre></td></tr></table></figure>
 
-<img src='http://i2.tiimg.com/718066/624ab6221890ec4b.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/2.png" alt="2.png"></p>
 <p>运行成功后，在浏览器地址栏输入<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000</a> 可以看到当前的博客。</p>
 <p>此时helloworld文章没有内容，打开/blog/sources/_post/目录，使用编辑器打开helloworld.md添加markdown格式的内容，推荐使用typora编辑器，后续会介绍这款编辑器，<a href="https://www.typora.io/" target="_blank" rel="noopener">官网</a>下载即可，现在重新运行如下命令</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">或者用更简洁的写法</span><br><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
@@ -33,19 +31,15 @@
 <h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><p>hexo默认安装landscape主题，如想使用别人的主题，需要使用git工具。Windows和Mac用户安装十分简单，Windows登录<a href="https://git-scm.com/" target="_blank" rel="noopener">git官网</a>下载默认安装即可，Mac用户在命令行键入 git 命令即可自动提示安装。</p>
 <h3 id="注册GitHub"><a href="#注册GitHub" class="headerlink" title="注册GitHub"></a>注册GitHub</h3><p>首先注册一个<a href="http://github.com/" target="_blank" rel="noopener">github</a>用户。</p>
 <p>配置用户信息，第一步打开git bash</p>
-<img src='http://i2.tiimg.com/718066/2b70bacca10bc43d.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/3.png" alt="3.png"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">配置用户名和邮箱</span><br><span class="line">git config --global “user.name”</span><br><span class="line">git config --global “user.email”（注册git的邮箱）</span><br><span class="line">配置SSH keys</span><br><span class="line">ssh-keygen -t rsa -C &quot;你的邮箱&quot;</span><br><span class="line">type C:\User\Adminstrator\.ssh\id_rsa.pub</span><br></pre></td></tr></table></figure>
 
-<img src='http://i2.tiimg.com/718066/902e1626edcc8e42.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/4.png" alt="4.png"></p>
 <p>复制你看到的内容，在github内配置。步骤为：登陆你的github帐户。点击你的头像，然后 Settings -&gt; 左栏点击 SSH and GPG keys -&gt; 点击 New SSH key</p>
-<img src='http://i2.tiimg.com/718066/0c5ded961515d500.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/5.png" alt="5.png"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">在gitbush输入以下命令查看是否成功</span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
-<img src='http://i2.tiimg.com/718066/fbf311e91327b849.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/6.png" alt="6.png"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">下载主题</span><br><span class="line">cd &#x2F;blog&#x2F;themes</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;GallenHu&#x2F;hexo-theme-Daily.git .&#x2F;Daily</span><br><span class="line">cd .&#x2F;Daily</span><br></pre></td></tr></table></figure>
 
 <h3 id="修改配置文件并重启服务"><a href="#修改配置文件并重启服务" class="headerlink" title="修改配置文件并重启服务"></a>修改配置文件并重启服务</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">修改 &#x2F;blog&#x2F;config.yml文件，将theme改为Daily</span><br><span class="line">theme: Daily</span><br><span class="line">重启服务</span><br><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
@@ -53,35 +47,28 @@
 <p>重新打开<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000</a>查看效果</p>
 <h3 id="更多主题"><a href="#更多主题" class="headerlink" title="更多主题"></a>更多主题</h3><p>hexo|themes主题：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
 <h1 id="github申请免费静态空间"><a href="#github申请免费静态空间" class="headerlink" title="github申请免费静态空间"></a>github申请免费静态空间</h1><p>点击右上角 <strong>+</strong> 选择 new respositories创建新的项目。</p>
-<img src='http://i2.tiimg.com/718066/9a45965d70ac11d1.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/8.png" alt="8.png"></p>
 <p>设置Repository Name，格式为用户名.github.io，Repository</p>
 <p>Name必须与你的用户名一致，例如下图</p>
-<img src='http://i2.tiimg.com/718066/904b4cf35432d624.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/9.png" alt="9.png"></p>
 <p>其他选项默认即可，直接点击最后的Create repository。</p>
 <p>此时你的静态空间就创建完成，在浏览器输入 <a href="http://username.github.io/" target="_blank" rel="noopener">http://username.github.io</a> 就可以访问，例如我访问自己的blog</p>
-<img src='http://i2.tiimg.com/718066/5c9600e51aeb6862.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/10.png" alt="10.png"></p>
 <h1 id="将hexo上传到github"><a href="#将hexo上传到github" class="headerlink" title="将hexo上传到github"></a>将hexo上传到github</h1><p>安装deployer-git</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
 <p>在/blog/_config.yml修改deploy属性（注意yml文件的格式，在 : 后有空格）</p>
-<img src='http://i2.tiimg.com/718066/8584a41e8a5c446b.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/11.png" alt="11.png"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line"> repo: git@github.com:milkdec&#x2F;milkdec.github.io.git（milkdec换为你自己的用户名）</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
-<img src='http://i2.tiimg.com/718066/c978e4f36eff81a4.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/12.png" alt="12.png"></p>
 <p>最后使用命令将Hexo上传到</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
 
-<img src='http://i2.tiimg.com/718066/6601af0243f3166e.png'>
-
-
-
+<p><img src="http://s1.wailian.download/2020/05/05/13.png" alt="13.png"></p>
 <p>本文同步发送于公众号：tuzierliuSB(是不是非常朋克？)，闲来无事的朋友可以常来看看。</p>
-<img src='http://i2.tiimg.com/718066/184914370720a7bd.jpg'>]]></content>
+<p><img src="http://s1.wailian.download/2020/05/05/logo.jpg" alt="logo.jpg"></p>
+]]></content>
       <categories>
         <category>博客</category>
       </categories>
@@ -95,8 +82,7 @@
     <title>Hexo-Github（二）文件及命令</title>
     <url>/2020/04/26/Hexo-Github%EF%BC%88%E4%BA%8C%EF%BC%89%E6%96%87%E4%BB%B6%E5%8F%8A%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h1 id="一-配置文件讲解"><a href="#一-配置文件讲解" class="headerlink" title="一.配置文件讲解"></a>一.配置文件讲解</h1><p>Hexo搭建好后，我们需要对其进行个性化的配置，使得Hexo能满足自己的需求，如何进行个性化配置？我们需要操作/blog目录下的 _config.yml文件</p>
-<img src='http://i2.tiimg.com/718066/fbbfcca0c135c3a2.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/14.png" alt="14.png"></p>
 <h2 id="1-site"><a href="#1-site" class="headerlink" title="1.site"></a>1.site</h2><table>
 <thead>
 <tr>
@@ -135,8 +121,7 @@
 </tbody></table>
 <p><strong>注：</strong>关于中文乱码出现的原因是：_config.yml文件默认编码为ANSI。</p>
 <p>解决办法是：文件另存为，在底部修改编码为UTF-8</p>
-<img src='http://i2.tiimg.com/718066/7ff2d85bbf522b0c.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/15.png" alt="15.png"></p>
 <h2 id="2-URL"><a href="#2-URL" class="headerlink" title="2.URL"></a>2.URL</h2><p>博客的地址，一般不用更改。</p>
 <table>
 <thead>
@@ -441,7 +426,8 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo --silent</span><br></pre></td></tr></table></figure>
 
 <p>本文同步发送于公众号：tuzierliuSB(是不是非常朋克？)，闲来无事的朋友可以常来看看。</p>
-<img src='http://i2.tiimg.com/718066/184914370720a7bd.jpg'>]]></content>
+<p><img src="http://s1.wailian.download/2020/05/05/logo.jpg" alt="logo.jpg"></p>
+]]></content>
       <categories>
         <category>博客</category>
       </categories>
@@ -459,12 +445,10 @@
 <h2 id="图片插件"><a href="#图片插件" class="headerlink" title="图片插件"></a>图片插件</h2><p>首先，我们需要下载插件，打开CMD输入以下命令</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
 
-<img src='http://i2.tiimg.com/718066/8a1f902116483972.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/21.png" alt="21.png"></p>
 <p>第二步，修改_config.yml配置文件</p>
 <p>修改post_asset_folder:true</p>
-<img src='http://i2.tiimg.com/718066/904630840fe09038.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/22.png" alt="22.png"></p>
 <p>第三步，git bash进入博客工程文件夹，新建一篇文章</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new post testfile</span><br></pre></td></tr></table></figure>
 
@@ -473,13 +457,11 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![](同名文件夹&#x2F;图片名称)</span><br></pre></td></tr></table></figure>
 
 <p>使用相对路径，这样才能读取到</p>
-<img src='http://i2.tiimg.com/718066/f67217ce363e7425.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/23.png" alt="23.png"></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
 
 <p>打开浏览器访问 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000</a></p>
-<img src='http://i2.tiimg.com/718066/fd6b924d363aa0d7.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/24.png" alt="24.png"></p>
 <p>图片添加成功</p>
 <h2 id="GitHub-PicGo"><a href="#GitHub-PicGo" class="headerlink" title="GitHub+PicGo"></a>GitHub+PicGo</h2><p>首先我们需要知道一个概念，图床工具是什么？</p>
 <p>简单来说就是把本地图片转换为链接的一种工具。我们将要使用的PicGo就是其中的一款，它支持微博/七牛云/阿里OSS/腾讯COS/又拍云/GitHub/SM.MS/imgur等八种常用图床，功能强大，简单易用。</p>
@@ -487,33 +469,31 @@
 <p>我们在写博客时需要插入图片，五花八门，内容非常多，本地存储起来十分麻烦。此时，我们可以在GitHub上利用PicGo搭建图床，将想要放入文章的图片上传到图床转换为可访问的链接，将放入文章内即可直接访问。</p>
 <p>首先，我们需要到GitHub下载<a href="https://github.com/Molunerfinn/PicGo/releases" target="_blank" rel="noopener">PicGo</a>并安装。</p>
 <p>在GitHub新建一个库用于存储上传的图片</p>
-<img src='http://i2.tiimg.com/718066/c8e79e3182d7d631.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/25.png" alt="25.png"></p>
 <p>在 个人中心 - setting - developer setting - personal access tokens中选择generate new token新建一个token，填写note注释，选择repo复选框，拉到底部确定新建。</p>
-<img src='http://i2.tiimg.com/718066/2a1bf05e753b454a.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/26.png" alt="26.png"></p>
 <p>复制保存一串token字符，这只会出现一次，请好好保存。</p>
 <p>打开PicGo，在图床设置选择Github,仓库名为 用户/仓库名，分支名为master，token为你复制的那一串字符，存储路径可填可不填，自定义域名为</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;用户名&#x2F;仓库名&#x2F;master</span><br></pre></td></tr></table></figure>
 
 <p>点击完成即可绑定，然后设置成默认图床。</p>
-<img src='http://i2.tiimg.com/718066/8472d41c1cffd414.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/27.png" alt="27.png"></p>
 <p>接下来我们在上传区将需要的图片拉进去，或者将剪贴板的图片直接上传，上传成功后会有提醒</p>
-<img src='http://i2.tiimg.com/718066/bb67df76e7a3fa3d.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/28.png" alt="28.png"></p>
 <p>上传完成后在相册可以直接看到自己上传的图片</p>
-<img src='http://i2.tiimg.com/718066/a4e08447c038e567.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/29.png" alt="29.png"></p>
 <p>在需要使用的时候直接将图片拉取到文章内容中就行了。</p>
-<img src='http://i2.tiimg.com/718066/f3e225de1d40589b.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/30.png" alt="30.png"></p>
 <p>在网页中也可以正常访问。</p>
-<img src='http://i2.tiimg.com/718066/c3acd718072866b4.png'>
-
-<p>最后，图床有一个缺点是太慢，容易加载不出来，个人更倾向于使用第一个方法。博客搭建系列文章已经结束，快来写一篇属于自己的奇思妙想吧。</p>
+<p><img src="http://s1.wailian.download/2020/05/05/31.png" alt="31.png"></p>
+<p>最后，图床有一个缺点是太慢，容易加载不出来，个人更倾向于使用第一个方法。</p>
+<p>推荐两个免费的图床：</p>
+<p>1.<a href="http://www.tietuku.com/" target="_blank" rel="noopener">贴图库</a>（极不稳定，可能会删除用户图片）</p>
+<p>2.<a href="https://www.wailian.work/" target="_blank" rel="noopener">外链工厂</a></p>
+<p>博客搭建系列文章已经结束，快来写一篇属于自己的奇思妙想吧。</p>
 <p>本文同步发送于公众号：tuzierliuSB(是不是非常朋克？)，闲来无事的朋友可以常来看看。</p>
-<img src='http://i2.tiimg.com/718066/184914370720a7bd.jpg'>]]></content>
+<p><img src="http://s1.wailian.download/2020/05/05/logo.jpg" alt="logo.jpg"></p>
+]]></content>
       <categories>
         <category>博客</category>
       </categories>
@@ -529,31 +509,41 @@
     <content><![CDATA[<p>Hexo的一些命令和文件夹作用大家应该都已经了解，现在开始实战，正式讲解如何提交自己写的文章，我们需要下载Typora，下载速度会很慢,复制下载链接到迅雷会快很多。<a href="https://www.typora.io/" target="_blank" rel="noopener">Typora官网</a>。<br>这里我们需要引入新的知识，markdown，也就是hexo文章使用的语法。</p>
 <h2 id="什么是markdown？"><a href="#什么是markdown？" class="headerlink" title="什么是markdown？"></a>什么是markdown？</h2><p>这是一种标记类型语言，可以使普通文本拥有一定的格式，其中一些功能十分强大例如插入图片，超链接，代码块，甚至表格。<br>markdown的常用语法<br>参考<a href="https://m.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a></p>
 <h2 id="编写文章内容"><a href="#编写文章内容" class="headerlink" title="编写文章内容"></a>编写文章内容</h2><p>下面我们开始正式编写自己的文章，在你的hexo目录下找到/source/_post/helloworld.md，用Typora打开，编辑内容</p>
-<img src='http://i2.tiimg.com/718066/1fd66da3e20faa36.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/16.png" alt="16.png"></p>
 <p>首先我们需要根据文章内容加上标签，也可以说是，就是 <strong>tags:</strong> 这一栏，添加的格式为</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">tags:</span><br><span class="line">- 标签一</span><br><span class="line">- 标签二</span><br></pre></td></tr></table></figure>
 
 <p>之后根据创作的的文章内容新建分类，在tag下新添加一行<strong>categories</strong>，添加分类，格式为</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">- 分类</span><br></pre></td></tr></table></figure>
 
-<img src='http://i2.tiimg.com/718066/881c077bd04e3e1d.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/17.png" alt="17.png"></p>
 <p>在<strong>title</strong>栏添加文章标题，例如helloworld，注：文章标题≠文件名，<strong>hexo new post</strong>新建文章时后跟的是文件名，并不是文章名</p>
 <p>在文章正文添加一些内容，例如test ，no meaning之类的内容，添加上一些格式就可以保存关闭文件</p>
-<img src='http://i2.tiimg.com/718066/6e7e208ff40ad1a1.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/18.png" alt="18.png"></p>
 <p>打开<strong>git bash</strong>，输入以下命令编译网站内容并打开本地服务</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
 
 <p>现在，打开浏览器，输入<strong>localhost:4000</strong>,你就可以查看刚刚已经编写好的文章</p>
-<img src='http://i2.tiimg.com/718066/ea5be328b674762e.png'>
-
-<img src='http://i2.tiimg.com/718066/d8191cd493c9f7c7.png'>
-
+<p><img src="http://s1.wailian.download/2020/05/05/19.png" alt="19.png"></p>
+<p><img src="http://s1.wailian.download/2020/05/05/20.png" alt="20.png"></p>
 <p>最后一篇我们将会分享如何在文章内添加图片和链接以及如何搭建图床。</p>
 <p>本文同步发送于公众号：tuzierliuSB(是不是非常朋克？)，闲来无事的朋友可以常来看看。</p>
-<img src='http://i2.tiimg.com/718066/184914370720a7bd.jpg'>]]></content>
+<p><img src="http://s1.wailian.download/2020/05/05/logo.jpg" alt="logo.jpg"></p>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-Github（五）将博客同步部署到多个平台</title>
+    <url>/2020/05/09/Hexo-Github%EF%BC%88%E4%BA%94%EF%BC%89%E5%B0%86%E5%8D%9A%E5%AE%A2%E5%90%8C%E6%AD%A5%E9%83%A8%E7%BD%B2%E5%88%B0%E5%A4%9A%E4%B8%AA%E5%B9%B3%E5%8F%B0/</url>
+    <content><![CDATA[<p><img src="http://s1.wailian.download/2020/05/05/logo.jpg" alt="logo.jpg"></p>
+]]></content>
       <categories>
         <category>博客</category>
       </categories>
