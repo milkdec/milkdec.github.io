@@ -542,7 +542,12 @@
   <entry>
     <title>Hexo-Github（五）将博客同步部署到多个平台</title>
     <url>/2020/05/09/Hexo-Github%EF%BC%88%E4%BA%94%EF%BC%89%E5%B0%86%E5%8D%9A%E5%AE%A2%E5%90%8C%E6%AD%A5%E9%83%A8%E7%BD%B2%E5%88%B0%E5%A4%9A%E4%B8%AA%E5%B9%B3%E5%8F%B0/</url>
-    <content><![CDATA[<p><img src="http://s1.wailian.download/2020/05/05/logo.jpg" alt="logo.jpg"></p>
+    <content><![CDATA[<p>​    一般来说，我们会将文章上传到多个博客平台上，一是为了阅读量，而也是为了访问速度。</p>
+<p>​    国内访问GitHub的速度简直不敢恭维，当你打开一个GitHub的页面，国内的博客网站你应该已经打开了4、5个，在这种情况下，我们肯定选择将博客部署在访问速度更快的平台。那么问题来了，我们已经在GitHub部署了自己的博客，已经部署好了的博客总不能说丢就丢吧。</p>
+<p>​    所以，hexo支持同时部署到多个平台，下面我将以国内gitee为例，继续白嫖第二个博客平台。</p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>​    安装具体细节请参考之前写过的<a href="https://milkdec.github.io/2020/04/25/Hexo-Github%EF%BC%88%E4%B8%80%EF%BC%89%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83/">安装环境篇</a>，注意提前安装git和node.js。（已安装请略过）</p>
+<h2 id="部署博客到gitee上"><a href="#部署博客到gitee上" class="headerlink" title="部署博客到gitee上"></a>部署博客到gitee上</h2><h4 id="1-创建gitee账号"><a href="#1-创建gitee账号" class="headerlink" title="1.创建gitee账号"></a>1.创建gitee账号</h4><p>​    到<a href="https://gitee.com/" target="_blank" rel="noopener">码云</a>上申请注册账号，码云类似国内版GitHub，所以操作也差不多</p>
+<p><img src="http://s1.wailian.download/2020/05/05/logo.jpg" alt="logo.jpg"></p>
 ]]></content>
       <categories>
         <category>博客</category>
